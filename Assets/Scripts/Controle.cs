@@ -58,9 +58,4 @@ public class Controle : MonoBehaviour {
         playerRigidbody.MoveRotation(playerRigidbody.rotation * deltaRotation);
 
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-
-    }
 }
