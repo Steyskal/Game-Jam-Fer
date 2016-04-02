@@ -59,4 +59,8 @@ public class Controle : MonoBehaviour {
 
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+
+    }
 }
