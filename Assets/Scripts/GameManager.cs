@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour {
 
     private static GameManager _instance = null;
 
-    public GameObject hologramPositioner;
     public GameObject informationCanvas;
     public Text title;
     public Text description;
@@ -73,29 +72,13 @@ public class GameManager : MonoBehaviour {
 
     public void updateScanInfo(GameObject objectPrefab)
     {
-        setHologram(objectPrefab);
+        _scannedCell = objectPrefab;
         _cellScanned = true;
     }
 
-    public void setHologram(GameObject objectPrefab)
+    public void setCellSprite(GameObject objectPrefab)
     {
-        Destroy(_scannedCell);
-        _scannedCell = Instantiate(objectPrefab);
-        _scannedCell.GetComponent<Rigidbody>().isKinematic = true;
-        _scannedCell.transform.SetParent(hologramPositioner.transform);
-        _scannedCell.transform.localPosition = Vector3.zero;
 
-        Vector3 holoSize = hologramPositioner.GetComponent<BoxCollider>().size;
-        Vector3 objectSize = objectPrefab.GetComponent<Collider>().bounds.size;
-
-        float scaleX = holoSize.x / objectSize.x;
-        float scaleY = holoSize.y / objectSize.y;
-        //float scaleX = holoSize.x / hologramObject.transform.localScale.x;
-        //float scaleY = holoSize.y / hologramObject.transform.localScale.y;
-
-        float finalScale = scaleX < scaleY ? scaleX : scaleY;
-
-        _scannedCell.transform.localScale = new Vector3(finalScale, finalScale, finalScale);
     }
 
     public void setInformationText(string newTitle, string newDescription)

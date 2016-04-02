@@ -28,13 +28,12 @@ public class Controle : MonoBehaviour {
     }
 	
 	void Update () {
-        
+
         moveV = Input.GetAxis("Horizontal");
         moveH = Input.GetAxis("Vertical");
+        moveH *= -1.0f;
 
         moveLT_RT = Input.GetAxis("LTRT");
-
-        
     }
 
     void FixedUpdate()
@@ -46,7 +45,7 @@ public class Controle : MonoBehaviour {
 
     void Move()
     {
-        playerRigidbody.MovePosition(transform.position + transform.forward * (moveSpeed / 10) * moveLT_RT * -1);
+        playerRigidbody.MovePosition(transform.position + transform.forward * (moveSpeed / 10) * moveLT_RT);
         
     }
 
