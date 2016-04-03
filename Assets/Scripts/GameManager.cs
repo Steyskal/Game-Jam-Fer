@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour {
                         Destroy(_scannedCell);
 
                     //Destroy(cellSprite.gameObject);
-                    //setInformationText("", "<color=orange>Final Mision</color>\nSave the heart!");
+                    setInformationText("Scans completed", "There are no further cells residing in this body.");
                     
                 }
 
@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour {
 
     public void setInformationText(string newTitle, string newDescription)
     {
-        title.text = newTitle;
+        title.text = "<color=yellow>"+newTitle+"</color>";
         description.text = newDescription;
     }
 
