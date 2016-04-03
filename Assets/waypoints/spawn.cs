@@ -89,7 +89,7 @@ public class spawn : MonoBehaviour {
                 Vector3 position = new Vector3(UnityEngine.Random.Range(-5.0F, 5.0F), UnityEngine.Random.Range(-5.0F, 5.0F), UnityEngine.Random.Range(-8.0F, 4.0F));
 
                 GameObject clone = Instantiate(cell,
-                    new Vector3(UnityEngine.Random.Range(-5.0F, 5.0F), UnityEngine.Random.Range(-5.0F, 5.0F), UnityEngine.Random.Range(-8.0F, 4.0F)),
+                    new Vector3(UnityEngine.Random.Range(-5.0F, 5.0F), UnityEngine.Random.Range(-5.0F, 5.0F), UnityEngine.Random.Range(-8.0F, 24.0F)),
                     Quaternion.identity) as GameObject;
                 clone.transform.SetParent(this.gameObject.transform, false);
 
