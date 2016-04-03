@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour {
         }
 
         if (!QuestManager.getInstance().win)
-            quest.text = "<color=orange>Save the patient!</color>- get to the heart and destroy " + QuestManager.getInstance().cellsLeft + "/20 enemy cells.";
+            quest.text = "<color=orange>Save the patient!</color>\n- get to the heart and destroy " + QuestManager.getInstance().cellsLeft + "/20 enemy cells.";
         else
         {
             WinGame();
