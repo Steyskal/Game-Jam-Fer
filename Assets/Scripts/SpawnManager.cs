@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SpawnManager : MonoBehaviour {
-
+    /*
     [System.Serializable]
     public struct SpawnPoints
     {
@@ -51,5 +51,5 @@ public class SpawnManager : MonoBehaviour {
 
             clone.GetComponent<Rigidbody>().AddForce(transform.forward * cellSpeed, ForceMode.Force);
         }
-    }
+    }*/
 }
