@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour {
     public AudioClip newInfo;
     public List<GameObject> cellsToScan;
 
+    public GameObject questLog;
+    public Text quest;
+    public GameObject controls;
+
     private GameObject _scannedCell;
     private float _timer = 0.0f;
     private int _scanCounter = 0;
@@ -81,6 +85,22 @@ public class GameManager : MonoBehaviour {
             setCellSprite(_scannedCell);
             _cellScanned = false;
         }
+
+
+        if (Input.GetKeyUp(KeyCode.Joystick1Button3))
+        {
+            _audioSource.pitch = 0.6f;
+            _audioSource.PlayOneShot(newInfo);
+            questLog.SetActive(!questLog.activeSelf);
+            controls.SetActive(!controls.activeSelf);
+        }
+
+        if (!QuestManager.getInstance().win)
+            quest.text = "<color=orange>Save the patient!</color>- get to the heart and destroy " + QuestManager.getInstance().cellsLeft + "/20 enemy cells.";
+        else
+        {
+            WinGame();
+        }
     }
 
     public void updateScanInfo(GameObject objectPrefab)
@@ -98,5 +118,13 @@ public class GameManager : MonoBehaviour {
     {
         title.text = newTitle;
         description.text = newDescription;
+    }
+
+    public void WinGame()
+    {
+        _audioSource.pitch = 1.0f;
+        _audioSource.PlayOneShot(newInfo);
+        quest.text = "<color=orange>Good job!</color>\nDr. Stroke you saved the patient!";
+        //Time.timeScale = 0.0f;
     }
 }

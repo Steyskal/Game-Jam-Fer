@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Controle : MonoBehaviour {
 
@@ -11,9 +12,12 @@ public class Controle : MonoBehaviour {
     private float moveV;
     private float moveLT_RT;
 
+    public List<GameObject> flashlights;
+
     public float moveSpeed;
     public float rotSpeed;
 
+    public GameObject sprayParticle;
     // Joystick1Button4 LB
     // Joystick1Button5 RB
     // Joystick1Button9 donja gljivica kad se stisne
@@ -33,6 +37,25 @@ public class Controle : MonoBehaviour {
         moveH = Input.GetAxis("Vertical");
 
         moveLT_RT = Input.GetAxis("LTRT");
+
+        if (Input.GetKeyUp(KeyCode.Joystick1Button1))
+        {
+            foreach (GameObject f in flashlights)
+            {
+                f.SetActive(!f.activeSelf);   
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
+        {
+            sprayParticle.SetActive(true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Joystick1Button2))
+        {
+            sprayParticle.SetActive(false);
+        }
+
     }
 
     void FixedUpdate()
