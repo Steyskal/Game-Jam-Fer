@@ -38,7 +38,7 @@ public class Controle : MonoBehaviour {
 
         moveLT_RT = Input.GetAxis("LTRT");
 
-        if (Input.GetKeyUp(KeyCode.Joystick1Button1))
+        if (Input.GetKeyUp(KeyCode.Joystick1Button2))
         {
             foreach (GameObject f in flashlights)
             {
@@ -46,12 +46,12 @@ public class Controle : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
             sprayParticle.SetActive(true);
         }
 
-        if (Input.GetKeyUp(KeyCode.Joystick1Button2))
+        if (Input.GetKeyUp(KeyCode.Joystick1Button0))
         {
             sprayParticle.SetActive(false);
         }

@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour {
 
             }
         }
-        else if (Input.GetKeyUp(KeyCode.Joystick1Button0) && (_scanCounter <= cellsToScan.Count))
+        else if (Input.GetKeyUp(KeyCode.Joystick1Button3) && (_scanCounter <= cellsToScan.Count))
         {
             _audioSource.pitch = 0.6f;
             _audioSource.PlayOneShot(newInfo);
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour {
         }
 
 
-        if (Input.GetKeyUp(KeyCode.Joystick1Button3))
+        if (Input.GetKeyUp(KeyCode.Joystick1Button1))
         {
             _audioSource.pitch = 0.6f;
             _audioSource.PlayOneShot(newInfo);
