@@ -9,7 +9,6 @@ public class spawn : MonoBehaviour {
     int stara;
     public float zrncaSpawnSpeed;
     public string nextTarget;
-    public GameObject zrncePrefab;
     public int maxBrojZrnca;
 
     [System.Serializable]
@@ -49,13 +48,11 @@ public class spawn : MonoBehaviour {
         if (zrncaCount > stara)
         {
             stara = zrncaCount;
-            Debug.Log("Dodan je novi!");
         }
 
         if (zrncaCount < stara)
         {
             stara = zrncaCount;
-            Debug.Log("Maknut je jedan!");
         }
         
     }

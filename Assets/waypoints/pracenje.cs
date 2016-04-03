@@ -28,7 +28,7 @@ public class pracenje : MonoBehaviour
         target = GameObject.Find("PuteviGospodnji_" + 1).transform;      // pocetni target dok se instancira !!!!
         target = target.GetChild(Random.Range(1, 4)).transform;
 
-        playerSpawn = GameObject.Find("player").GetComponent<spawn>();
+        playerSpawn = GameObject.Find("Player").GetComponent<spawn>();
                 
         //Debug.Log("Waypoint_" + 1 + wayList[1]);
     }
@@ -51,19 +51,66 @@ public class pracenje : MonoBehaviour
         if (other.gameObject.layer.Equals(LayerMask.NameToLayer("putGospodinov")) && waypointMetnuo == false)
         {
             waypointMetnuo = true;
-            Invoke("IzvadiGa", 3.5f);
+            Invoke("IzvadiGa", 2.0f);
             waypointNum++;
-            try
+
+            switch (waypointNum)
             {
-                // target = GameObject.Find("PuteviGospodnji_" + waypointNum + "/waypoint_" + wayList[Random.Range(0, 3)]).transform;
-                target = GameObject.Find("PuteviGospodnji_" + waypointNum).transform;
-                target = target.GetChild(Random.Range(1, 4)).transform;
-            }
-            catch (System.Exception)
-            {
-                target = GameObject.Find("PuteviGospodnji_" + 1).transform;  // ALO!!! trebalo bude promjenit dok budes radit finali level
-                target = target.GetChild(Random.Range(1, 4)).transform;
-                waypointNum = 1;
+                case 8:
+                    waypointNum = Random.Range(1, 2);
+                    waypointNum = waypointNum == 1 ? 59 : 9;
+                    target = GameObject.Find("PuteviGospodnji_" + waypointNum).transform;
+                    target = target.GetChild(Random.Range(1, 4)).transform;
+
+                    break;
+
+                case 9:
+                    waypointNum = Random.Range(1, 2);
+                    waypointNum = waypointNum == 1 ? 43 : 10;
+                    target = GameObject.Find("PuteviGospodnji_" + waypointNum).transform;
+                    target = target.GetChild(Random.Range(1, 4)).transform;
+
+                    break;
+
+                case 15:
+                    waypointNum = Random.Range(1, 2);
+                    waypointNum = waypointNum == 1 ? 34 : 16;
+                    target = GameObject.Find("PuteviGospodnji_" + waypointNum).transform;
+                    target = target.GetChild(Random.Range(1, 4)).transform;
+
+                    break;
+
+                case 42:                    
+                    target = GameObject.Find("PuteviGospodnji_" + 26).transform;
+                    target = target.GetChild(Random.Range(1, 4)).transform;
+
+                    break;
+
+                case 58:
+                    target = GameObject.Find("PuteviGospodnji_" + 31).transform;
+                    target = target.GetChild(Random.Range(1, 4)).transform;
+
+                    break;
+
+                 case 33:
+                    target = GameObject.Find("PuteviGospodnji_" + 7).transform;
+                    target = target.GetChild(Random.Range(1, 4)).transform;
+
+                    break;
+
+                default:
+                    try
+                    {
+                        target = GameObject.Find("PuteviGospodnji_" + waypointNum).transform;
+                        target = target.GetChild(Random.Range(1, 4)).transform;
+                    }
+                    catch (System.Exception)
+                    {
+                        target = GameObject.Find("PuteviGospodnji_" + 1).transform;  // ALO!!! trebalo bude promjenit dok budes radit finali level
+                        target = target.GetChild(Random.Range(1, 4)).transform;
+                        waypointNum = 1;
+                    }
+                    break;
             }
             
         }
