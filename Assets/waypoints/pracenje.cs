@@ -12,12 +12,24 @@ public class pracenje : MonoBehaviour
     private spawn playerSpawn;
     int waypointNum;
 
+    char[] wayList = new char[5];
+    bool waypointMetnuo;
+
     void Start()
     {
-        waypointNum = 1;
-        target = GameObject.Find("waypoint_" + 1).transform;
+        waypointMetnuo = false;
+
+        wayList[0] = 'a';
+        wayList[1] = 'b';
+        wayList[2] = 'c';
+        wayList[3] = 'd';
+
+        waypointNum = 1; // ALO!!! trebalo bude promjenit dok budes radit finali level
+        target = GameObject.Find("waypoint_" + 1 + wayList[Random.Range(0, 3)]).transform;
 
         playerSpawn = GameObject.Find("player").GetComponent<spawn>();
+                
+        Debug.Log("Waypoint_" + 1 + wayList[1]);
     }
 
     void Update()
@@ -34,16 +46,18 @@ public class pracenje : MonoBehaviour
             Debug.Log("Unutra sam");
         }
 
-        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("waypoint")))
+        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("waypoint")) && waypointMetnuo == false)
         {
+            waypointMetnuo = true;
+            Invoke("IzvadiGa", 3.0f);
             waypointNum++;
             try
             {                
-                target = GameObject.Find("waypoint_" + waypointNum).transform;
+                target = GameObject.Find("waypoint_" + waypointNum + wayList[Random.Range(0,3)]).transform;
             }
             catch (System.Exception)
             {
-                target = GameObject.Find("waypoint_1").transform;
+                target = GameObject.Find("waypoint_1" + wayList[Random.Range(0, 3)]).transform;  // ALO!!! trebalo bude promjenit dok budes radit finali level
             }
             
         }
@@ -58,5 +72,10 @@ public class pracenje : MonoBehaviour
             Destroy(this.gameObject, 0);
         }
         
+    }
+
+    void IzvadiGa()
+    {
+        waypointMetnuo = false;
     }
 }

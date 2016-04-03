@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class spawn : MonoBehaviour {
-
+    [HideInInspector]
     public int zrncaCount;
     int stara;
     public float zrncaSpawnSpeed;
     public string nextWaypoint;
     public GameObject zrncePrefab;
+    public int maxBrojZrnca;
 
 	// Use this for initialization
 	void Start () {
@@ -38,10 +40,10 @@ public class spawn : MonoBehaviour {
 
     void Spawn()
     {
-        if (zrncaCount < 10)
+        if (zrncaCount < maxBrojZrnca)
         {
             GameObject clone = Instantiate(zrncePrefab,
-                new Vector3(0, 0, -5), Quaternion.identity) as GameObject;
+                new Vector3(UnityEngine.Random.Range(-5.0F, 5.0F), UnityEngine.Random.Range(-5.0F, 5.0F), UnityEngine.Random.Range(-8.0F, 4.0F)), Quaternion.identity) as GameObject;
             clone.transform.SetParent(this.gameObject.transform, false);
             clone.GetComponent<pracenje>().target= GameObject.Find(nextWaypoint).transform;
             zrncaCount++;
