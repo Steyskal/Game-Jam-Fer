@@ -91,4 +91,12 @@ public class Controle : MonoBehaviour {
             GetComponent<AudioSource>().Play();
         }
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.GetComponent<BloodUnit>() != null)
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }

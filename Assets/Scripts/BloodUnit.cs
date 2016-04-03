@@ -49,6 +49,9 @@ public class BloodUnit : MonoBehaviour {
         {
             Invoke("DestroyCell", 1.0f);
         }
+
+        if(other.gameObject.layer.Equals(LayerMask.NameToLayer("SpawnManager")))
+            Destroy(gameObject);
     }
 
     void OnTriggerStay(Collider other)
