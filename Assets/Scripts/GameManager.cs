@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour {
     public Text description;
     public Image cellSprite;
     public GameObject newScanCanvas;
+    public Sprite endScanSprite;
 
     public float scanInterval;
     public AudioClip newInfo;
@@ -70,7 +72,7 @@ public class GameManager : MonoBehaviour {
 
                     //Destroy(cellSprite.gameObject);
                     setInformationText("Scans completed", "There are no further cells residing in this body.");
-                    
+                    cellSprite.sprite = endScanSprite;
                 }
 
             }
@@ -96,7 +98,7 @@ public class GameManager : MonoBehaviour {
         }
 
         if (!QuestManager.getInstance().win)
-            quest.text = "<color=orange>Save the patient!</color>\n- get to the heart and destroy " + QuestManager.getInstance().cellsLeft + "/20 enemy cells.";
+            quest.text = "<color=orange>Save the patient!</color>\n- get to the heart and destroy " + QuestManager.getInstance().cellsLeft + "/20 enemy cells.\n\nPress <color=green>Button A</color> to spray an antidote.";
         else
         {
             WinGame();
@@ -126,5 +128,12 @@ public class GameManager : MonoBehaviour {
         _audioSource.PlayOneShot(newInfo);
         quest.text = "<color=orange>Good job!</color>\nDr. Stroke you saved the patient!";
         //Time.timeScale = 0.0f;
+
+        Invoke("GoToCredits", 5.0f);
+    }
+
+    public void GoToCredists()
+    {
+        EditorSceneManager.LoadScene("Credits");
     }
 }

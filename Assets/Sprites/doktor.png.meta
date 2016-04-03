@@ -1,0 +1,107 @@
+fileFormatVersion: 2
+guid: 642c8f994f4f573498d425be9939bb36
+timeCreated: 1459678704
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: doktor_0
+    21300002: doktor_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 2
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: doktor_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 644
+        width: 208
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 104, y: 0.5}
+        - {x: 56, y: 19.5}
+        - {x: 36, y: 138.5}
+        - {x: 19, y: 157.5}
+        - {x: -53, y: 157.5}
+        - {x: -82, y: 152.5}
+        - {x: -104, y: 118.5}
+        - {x: -104, y: 39.5}
+        - {x: -57, y: -155.5}
+        - {x: -58, y: -157.5}
+        - {x: 66, y: -157.5}
+        - {x: 72, y: -155.5}
+        - {x: 104, y: -84.5}
+    - name: doktor_1
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 662
+        width: 376
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 143, y: 146.5}
+        - {x: 72, y: 146.5}
+        - {x: -53, y: -41.5}
+        - {x: -93, y: -11.5}
+        - {x: -124, y: 9.5}
+        - {x: -139, y: 9.5}
+        - {x: -188, y: -48.5}
+        - {x: -188, y: -57.5}
+        - {x: -55, y: -146.5}
+        - {x: -38, y: -146.5}
+        - {x: 185, y: 89.5}
+        - {x: 188, y: 91.5}
+        - {x: 188, y: 119.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -48,12 +48,14 @@ public class Controle : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
-            sprayParticle.SetActive(true);
+            sprayParticle.GetComponent<Collider>().enabled = true;
+            sprayParticle.GetComponent<ParticleSystem>().Play();
         }
 
         if (Input.GetKeyUp(KeyCode.Joystick1Button0))
         {
-            sprayParticle.SetActive(false);
+            sprayParticle.GetComponent<Collider>().enabled = false;
+            sprayParticle.GetComponent<ParticleSystem>().Stop();
         }
 
     }
@@ -78,5 +80,15 @@ public class Controle : MonoBehaviour {
         Quaternion deltaRotation = Quaternion.Euler(rotation * Time.deltaTime);
         playerRigidbody.MoveRotation(playerRigidbody.rotation * deltaRotation);
 
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        Debug.Log(other.gameObject.GetComponent<BloodUnit>());
+
+        if (other.gameObject.GetComponent<BloodUnit>() != null)
+        {
+            GetComponent<AudioSource>().Play();
+        }
     }
 }

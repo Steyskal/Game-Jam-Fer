@@ -41,4 +41,26 @@ public class BloodUnit : MonoBehaviour {
     {
         _collider.enabled = true;
     }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Spray")) && gameObject.layer.Equals(LayerMask.NameToLayer("Enemy")))
+        {
+            Invoke("DestroyCell", 1.0f);
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Spray")) && gameObject.layer.Equals(LayerMask.NameToLayer("Enemy")))
+        {
+            Invoke("DestroyCell", 1.0f);
+        }
+    }
+
+    void DestroyCell()
+    {
+        Destroy(gameObject);
+    }
 }
