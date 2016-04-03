@@ -10,15 +10,19 @@ public class GameManager : MonoBehaviour {
     public GameObject informationCanvas;
     public Text title;
     public Text description;
+    public Image cellSprite;
     public GameObject newScanCanvas;
 
     public float scanInterval;
+    public AudioClip newInfo;
     public List<GameObject> cellsToScan;
 
     private GameObject _scannedCell;
     private float _timer = 0.0f;
     private int _scanCounter = 0;
     private bool _cellScanned = false;
+
+    private AudioSource _audioSource;
 
     public static GameManager getInstance()
     {
@@ -35,6 +39,8 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -45,7 +51,9 @@ public class GameManager : MonoBehaviour {
 
             if(_timer >= scanInterval)
             {
-                if (_scanCounter < cellsToScan.Count) { 
+                if (_scanCounter < cellsToScan.Count) {
+                    _audioSource.pitch = 1.0f;
+                    _audioSource.PlayOneShot(newInfo);
                     newScanCanvas.SetActive(true);
                     informationCanvas.SetActive(false);
                     updateScanInfo(cellsToScan[_scanCounter++]);
@@ -56,16 +64,21 @@ public class GameManager : MonoBehaviour {
                     if (_cellScanned != null)
                         Destroy(_scannedCell);
 
-                    setInformationText("", "<color=orange>Final Mision</color>\nSave the heart!");
+                    //Destroy(cellSprite.gameObject);
+                    //setInformationText("", "<color=orange>Final Mision</color>\nSave the heart!");
+                    
                 }
 
             }
         }
         else if (Input.GetKeyUp(KeyCode.Joystick1Button0) && (_scanCounter <= cellsToScan.Count))
         {
+            _audioSource.pitch = 0.6f;
+            _audioSource.PlayOneShot(newInfo);
             newScanCanvas.SetActive(false);
             informationCanvas.SetActive(true);
             setInformationText(_scannedCell.GetComponent<BloodUnit>().unitName, _scannedCell.GetComponent<BloodUnit>().unitDescription);
+            setCellSprite(_scannedCell);
             _cellScanned = false;
         }
     }
@@ -78,7 +91,7 @@ public class GameManager : MonoBehaviour {
 
     public void setCellSprite(GameObject objectPrefab)
     {
-
+        cellSprite.sprite = objectPrefab.GetComponent<BloodUnit>().unitSprite;
     }
 
     public void setInformationText(string newTitle, string newDescription)

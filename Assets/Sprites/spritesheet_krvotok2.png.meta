@@ -1,0 +1,287 @@
+fileFormatVersion: 2
+guid: 5d1f91136018e3041a132080a2a5db66
+timeCreated: 1459642911
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spritesheet_krvotok2_0
+    21300002: spritesheet_krvotok2_1
+    21300004: spritesheet_krvotok2_2
+    21300006: spritesheet_krvotok2_3
+    21300008: spritesheet_krvotok2_4
+    21300010: spritesheet_krvotok2_5
+    21300012: spritesheet_krvotok2_6
+    21300014: spritesheet_krvotok2_7
+    21300016: spritesheet_krvotok2_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 2
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: spritesheet_krvotok2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: 38}
+        - {x: -19, y: 38}
+        - {x: -32, y: 36}
+        - {x: -43, y: 16}
+        - {x: -43, y: -11}
+        - {x: -31, y: -32}
+        - {x: -16, y: -35}
+        - {x: 24, y: -35}
+        - {x: 44, y: -21}
+        - {x: 45, y: -16}
+        - {x: 45, y: 22}
+    - name: spritesheet_krvotok2_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 42}
+        - {x: -12, y: 42}
+        - {x: -40, y: 26}
+        - {x: -40, y: -6}
+        - {x: -37, y: -26}
+        - {x: -33, y: -39}
+        - {x: 28, y: -39}
+        - {x: 34, y: -33}
+        - {x: 44, y: -14}
+        - {x: 44, y: 16}
+    - name: spritesheet_krvotok2_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 46}
+        - {x: -44, y: 33}
+        - {x: -44, y: -12}
+        - {x: -20, y: -43}
+        - {x: 38, y: -43}
+        - {x: 44, y: -31}
+        - {x: 44, y: 46}
+    - name: spritesheet_krvotok2_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 42}
+        - {x: -40, y: 29}
+        - {x: -40, y: -21}
+        - {x: -20, y: -39}
+        - {x: 23, y: -39}
+        - {x: 31, y: -36}
+        - {x: 43, y: -13}
+        - {x: 43, y: 33}
+        - {x: 36, y: 42}
+    - name: spritesheet_krvotok2_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 43}
+        - {x: -46, y: 17}
+        - {x: -46, y: -19}
+        - {x: -17, y: -40}
+        - {x: 13, y: -40}
+        - {x: 37, y: -23}
+        - {x: 46, y: 0}
+        - {x: 46, y: 31}
+        - {x: 21, y: 43}
+    - name: spritesheet_krvotok2_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 41}
+        - {x: -28, y: -3}
+        - {x: -28, y: -25}
+        - {x: -23, y: -38}
+        - {x: 28, y: -38}
+        - {x: 44, y: -27}
+        - {x: 44, y: 27}
+        - {x: 39, y: 41}
+      - - {x: -5, y: 41}
+        - {x: -31, y: 41}
+        - {x: -42, y: 34}
+        - {x: -43, y: 26}
+        - {x: -43, y: 0}
+        - {x: -39, y: -6}
+        - {x: -25, y: -6}
+        - {x: -18, y: -3}
+        - {x: -4, y: 17}
+        - {x: -3, y: 20}
+        - {x: -3, y: 40}
+    - name: spritesheet_krvotok2_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 31}
+        - {x: -40, y: 31}
+        - {x: -41, y: 30}
+        - {x: -41, y: -20}
+        - {x: -28, y: -31}
+        - {x: 2, y: -31}
+        - {x: 5, y: -17}
+        - {x: 5, y: 2}
+        - {x: -3, y: 24}
+      - - {x: 5, y: 34}
+        - {x: 0, y: 25}
+        - {x: 0, y: 5}
+        - {x: 10, y: -17}
+        - {x: 21, y: -31}
+        - {x: 40, y: -31}
+        - {x: 43, y: -25}
+        - {x: 43, y: 3}
+        - {x: 24, y: 34}
+    - name: spritesheet_krvotok2_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43, y: 2}
+        - {x: -46, y: 1}
+        - {x: -46, y: -32}
+        - {x: -40, y: -36}
+        - {x: -14, y: -36}
+        - {x: -8, y: -27}
+        - {x: -8, y: -2}
+        - {x: -11, y: 2}
+      - - {x: -12, y: 39}
+        - {x: -16, y: 29}
+        - {x: -18, y: 23}
+        - {x: -18, y: -3}
+        - {x: -6, y: -17}
+        - {x: 3, y: -22}
+        - {x: 43, y: -22}
+        - {x: 43, y: 33}
+        - {x: 36, y: 39}
+      - - {x: -35, y: 37}
+        - {x: -35, y: 21}
+        - {x: -28, y: 15}
+        - {x: -14, y: 15}
+        - {x: -14, y: 35}
+        - {x: -15, y: 37}
+    - name: spritesheet_krvotok2_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: -35}
+        - {x: -23, y: -39}
+        - {x: -24, y: -46}
+        - {x: 33, y: -46}
+        - {x: 38, y: -44}
+        - {x: 38, y: 44}
+        - {x: 17, y: 48}
+        - {x: -26, y: 48}
+        - {x: -29, y: 33}
+        - {x: -38, y: -24}
+        - {x: -38, y: -46}
+        - {x: -27, y: -46}
+        - {x: -25, y: -45}
+        - {x: -23, y: -36}
+        - {x: -23, y: -34}
+        - {x: -21, y: -31}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

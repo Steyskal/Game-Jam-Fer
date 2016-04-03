@@ -6,6 +6,7 @@ public class BloodUnit : MonoBehaviour {
     public string unitName;
     [TextAreaAttribute(1,5)]
     public string unitDescription;
+    public Sprite unitSprite;
 
     [System.Serializable]
     public struct ScaleCriticalValues
