@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
+//using UnityEditor.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -134,6 +134,6 @@ public class GameManager : MonoBehaviour {
 
     public void GoToCredists()
     {
-        EditorSceneManager.LoadScene("Credits");
+        //EditorSceneManager.LoadScene("Credits");
     }
 }
