@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour {
                         Destroy(_scannedCell);
 
                     //Destroy(cellSprite.gameObject);
-                    setInformationText("Scans completed", "There are no further cells residing in this body.");
+                    setInformationText("Skeniranje završeno", "Ne postaje druge stanice u ovom pacijentu.");
                     cellSprite.sprite = endScanSprite;
                 }
 
@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour {
         }
 
         if (!QuestManager.getInstance().win)
-            quest.text = "<color=orange>Save the patient!</color>\n- get to the heart and destroy " + QuestManager.getInstance().cellsLeft + "/20 enemy cells.\n\nPress <color=green>Button A</color> to spray an antidote.";
+            quest.text = "<color=orange>Spasite pacijenta!</color>\n- doðite do srca i uništite " + QuestManager.getInstance().cellsLeft + "/20 neprijateljskih stanica.\n\nPritisnite <color=green>Tipku A</color> da ubrizgate lijek.";
         else
         {
             WinGame();
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour {
     {
         _audioSource.pitch = 1.0f;
         _audioSource.PlayOneShot(newInfo);
-        quest.text = "<color=orange>Good job!</color>\nDr. Stroke you saved the patient!";
+        quest.text = "<color=orange>Bravo!</color>\nDoktore, spasili ste pacijenta!";
         //Time.timeScale = 0.0f;
 
         Invoke("GoToCredits", 5.0f);
