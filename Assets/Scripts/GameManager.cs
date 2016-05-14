@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
-//using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour {
     private float _timer = 0.0f;
     private int _scanCounter = 0;
     private bool _cellScanned = false;
+    private bool _hasWon = false;
 
     private AudioSource _audioSource;
 
@@ -77,7 +78,7 @@ public class GameManager : MonoBehaviour {
 
             }
         }
-        else if (Input.GetKeyUp(KeyCode.Joystick1Button3) && (_scanCounter <= cellsToScan.Count))
+        else if (Input.GetKeyUp(KeyCode.Joystick1Button0) && (_scanCounter <= cellsToScan.Count))
         {
             _audioSource.pitch = 0.6f;
             _audioSource.PlayOneShot(newInfo);
@@ -98,11 +99,19 @@ public class GameManager : MonoBehaviour {
         }
 
         if (!QuestManager.getInstance().win)
-            quest.text = "<color=orange>Spasite pacijenta!</color>\n- doðite do srca i uništite " + QuestManager.getInstance().cellsLeft + "/20 neprijateljskih stanica.\n\nPritisnite <color=green>Tipku A</color> da ubrizgate lijek.";
+            quest.text = "<color=orange>Spasite pacijenta!</color>\n- doðite do srca i uništite " + QuestManager.getInstance().cellsLeft + "/20 neprijateljskih stanica.\n\nPritisnite <color=blue>Tipku X</color> da ubrizgate lijek.";
         else
         {
-            WinGame();
+            if (!_hasWon)
+            {
+                WinGame();
+                _hasWon = true;
+            }
+            
         }
+
+        if (Input.GetKeyDown(KeyCode.Joystick1Button9))
+            Application.LoadLevel("menu");
     }
 
     public void updateScanInfo(GameObject objectPrefab)
@@ -132,8 +141,8 @@ public class GameManager : MonoBehaviour {
         Invoke("GoToCredits", 5.0f);
     }
 
-    public void GoToCredists()
+    public void GoToCredits()
     {
-        //EditorSceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("menu");
     }
 }

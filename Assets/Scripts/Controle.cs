@@ -36,9 +36,14 @@ public class Controle : MonoBehaviour {
         moveV = Input.GetAxis("Horizontal");
         moveH = Input.GetAxis("Vertical");
 
-        moveLT_RT = Input.GetAxis("LTRT");
+        if (Input.GetKey(KeyCode.Joystick1Button7))
+            moveLT_RT = 1.0f;
+        else if (Input.GetKey(KeyCode.Joystick1Button6))
+            moveLT_RT = -1.0f;
+        else
+            moveLT_RT = 0.0f;
 
-        if (Input.GetKeyUp(KeyCode.Joystick1Button2))
+        if (Input.GetKeyUp(KeyCode.Joystick1Button3))
         {
             foreach (GameObject f in flashlights)
             {
@@ -46,13 +51,13 @@ public class Controle : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
             sprayParticle.GetComponent<Collider>().enabled = true;
             sprayParticle.GetComponent<ParticleSystem>().Play();
         }
 
-        if (Input.GetKeyUp(KeyCode.Joystick1Button0))
+        if (Input.GetKeyUp(KeyCode.Joystick1Button2))
         {
             sprayParticle.GetComponent<Collider>().enabled = false;
             sprayParticle.GetComponent<ParticleSystem>().Stop();
@@ -69,7 +74,7 @@ public class Controle : MonoBehaviour {
 
     void Move()
     {
-        playerRigidbody.MovePosition(transform.position + transform.forward * (moveSpeed / 10) * moveLT_RT * -1.0f);
+        playerRigidbody.MovePosition(transform.position + transform.forward * (moveSpeed / 10) * moveLT_RT);
         
     }
 
